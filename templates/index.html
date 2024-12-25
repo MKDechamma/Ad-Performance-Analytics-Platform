@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Increase Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h2>Predict Sales Increase</h2>
+    <form action="/predict" method="post">
+        <label for="Radio">Radio Advertising Spend:</label><br>
+        <input type="text" id="Radio" name="Radio" required><br><br>
+        
+        <label for="TV">TV Advertising Spend:</label><br>
+        <input type="text" id="TV" name="TV" required><br><br>
+        
+        <label for="Newspaper">Newspaper Advertising Spend:</label><br>
+        <input type="text" id="Newspaper" name="Newspaper" required><br><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if predicted_increase is not none %}
+    <h3>Predicted Sales Increase: {{ predicted_increase }}</h3>
+    {% endif %}
+    <h2>Plots</h2>
+    <ul>
+        <li><a href="/scatter_plot">Scatter Plot</a></li>
+        <li><a href="/line_plot">Line Plot</a></li>
+        <li><a href="/histogram">Histogram</a></li>
+       
+    </ul>
+
+</body>
+</html>

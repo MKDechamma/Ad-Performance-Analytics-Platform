@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histograms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Histograms</h2>
+    
+    <div class="histogram-container">
+        <div class="histogram">
+            <h3>Radio Advertising Spend</h3>
+            <img src="data:image/png;base64,{{ radio_hist }}" alt="Radio Histogram">
+        </div>
+        <div class="histogram">
+            <h3>TV Advertising Spend</h3>
+            <img src="data:image/png;base64,{{ tv_hist }}" alt="TV Histogram">
+        </div>
+        <div class="histogram">
+            <h3>Newspaper Advertising Spend</h3>
+            <img src="data:image/png;base64,{{ newspaper_hist }}" alt="Newspaper Histogram">
+        </div>
+    </div>
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
